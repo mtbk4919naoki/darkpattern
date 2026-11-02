@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>事例⑨ キャンセル困難 | ダークパターン事例イラスト集</title>
+  <title>事例⑨ キャンセル困難 | ダークパターン事例別検討資料</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
@@ -64,22 +64,27 @@
   <div class="demo-chrome"><span class="demo-url">example-video.jp/account/cancel</span></div>
   <div class="demo-body">
     <div id="case09-step1" class="demo-step">
-      <div class="demo-progress"><span class="is-active"></span><span></span><span></span><span></span></div>
+      <div class="demo-progress"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
       <h3>会員特典を失います</h3><p>保存した作品、会員価格、ポイントが利用できなくなります。</p>
       <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="会員を継続します。" data-demo-tone="dark">会員を継続する</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step2">解約を続ける</button></div>
     </div>
     <div id="case09-step2" class="demo-step" hidden>
-      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span></span><span></span></div>
-      <h3>お得な休会プランはいかがですか？</h3><p>月額を半額にして3か月継続できます。</p>
-      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="休会プランへ変更しました。" data-demo-tone="dark">休会に変更</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step3">解約を続ける</button></div>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span></span><span></span><span></span></div>
+      <h3>特別なご案内です</h3><p>特別に3ヶ月間、50%割引でご利用いただけます。</p>
+      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="50%割引で継続します。" data-demo-tone="dark">この割引で続ける</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step3">解約を続ける</button></div>
     </div>
     <div id="case09-step3" class="demo-step" hidden>
-      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span></span></div>
-      <h3>解約理由を教えてください</h3><label class="demo-option"><input type="radio" name="reason">料金が高い</label><label class="demo-option"><input type="radio" name="reason">使わない</label>
-      <button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step4">次へ</button>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span></span><span></span></div>
+      <h3>退会の代わりに休会できます</h3><p class="demo-small">※プロモーションと大事なお知らせは届きます。</p>
+      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="月額0円の休会に変更しました。" data-demo-tone="dark">休会に変更</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step4">解約を続ける</button></div>
     </div>
     <div id="case09-step4" class="demo-step" hidden>
-      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span></div>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span></span></div>
+      <h3>解約理由を教えてください</h3><label class="demo-option"><input type="radio" name="reason">料金が高い</label><label class="demo-option"><input type="radio" name="reason">使わない</label>
+      <button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step5">次へ</button>
+    </div>
+    <div id="case09-step5" class="demo-step" hidden>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span></div>
       <h3>最終確認</h3><button class="demo-button demo-button--quiet" type="button" data-demo-message="解約しました。" data-demo-tone="dark">解約を確定する</button>
     </div>
   </div>
@@ -102,7 +107,7 @@
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p>申込みより解約だけが著しく長く、途中でデメリットや別プランを繰り返し提示する設計は、利用者の意思決定を妨げます。</p><p>改善例では契約情報の近くに解約入口を置き、確認は必要事項を示す1回にします。解約後の利用期限・請求・再開方法も結果として明示します。</p>
+        <p>申込みより解約だけが著しく長く、途中でデメリット、期間限定の割引、別プランを繰り返し提示する設計は、利用者の意思決定を妨げます。</p><p>改善例では契約情報の近くに解約入口を置き、確認は必要事項を示す1回にします。解約後の利用期限・請求・再開方法も結果として明示します。</p>
       </section>
 
       <nav class="case-nav" aria-label="ページ移動">

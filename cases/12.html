@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>事例⑫ お客様の声(1) | ダークパターン事例イラスト集</title>
+  <title>事例⑫ お客様の声(1) | ダークパターン事例別検討資料</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
@@ -65,7 +65,11 @@
     <p class="demo-small">★5の口コミを表示中</p>
     <div class="demo-review"><p class="demo-stars" aria-label="5つ星のうち5">★★★★★</p><strong>東京都 A.Kさん</strong><p>毎朝すっきり。家族にもすすめたい商品です！</p></div>
     <div class="demo-review"><p class="demo-stars" aria-label="5つ星のうち5">★★★★★</p><strong>大阪府 M.Sさん</strong><p>毎朝すっきり。家族にもすすめたい商品です！</p></div>
-    <p class="demo-note-dim">星1〜2の口コミ 18件は表示していません。</p>
+    <button class="demo-button demo-button--secondary" type="button" data-demo-reveal="case12-more">もっと見る</button>
+    <div id="case12-more" hidden>
+      <div class="demo-review"><p class="demo-stars" aria-label="5つ星のうち2">★★☆☆☆</p><strong>北海道 K.Tさん</strong><p>味が想像と違い、半分以上残りました。</p></div>
+      <div class="demo-review"><p class="demo-stars" aria-label="5つ星のうち1">★☆☆☆☆</p><strong>福岡 S.Nさん</strong><p>続けても変化を感じません。値段のわりに量が少ないです。</p></div>
+    </div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
@@ -87,7 +91,7 @@
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p>同じ文章を別人の口コミとして見せたり、低い評価を最初から出さなかったりすると、評価の全体が分かりません。</p><p>改善例では、購入した人かどうかを確認したうえで掲載し、星の数と投稿日を添えます。低い評価も同じ一覧に残します。</p>
+        <p>同じ文章を別人の口コミとして見せたり、低い評価を「もっと見る」の先に置いたりすると、評価の全体が分かりません。</p><p>改善例では、購入した人かどうかを確認したうえで掲載し、星の数と投稿日を添えます。低い評価も同じ一覧に残します。</p>
       </section>
 
       <nav class="case-nav" aria-label="ページ移動">
