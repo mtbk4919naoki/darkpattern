@@ -46,6 +46,7 @@
       </div>
 
       <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="source-label">資料での説明</p>
         <p class="definition">価格等を比較しづらくしているもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -58,29 +59,30 @@
       </section>
 
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
-        <p class="demo-intro">最も高いプランだけを先に見せ、比較表を操作の先に隠した料金ページです。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-cloud.jp/pricing</span></div>
   <div class="demo-body">
     <span class="demo-badge">おすすめ</span><h3>プレミアムプラン</h3><p class="demo-price">月額 4,800円</p><p>全機能・優先サポート・容量無制限</p>
-    <button class="demo-button" type="button" data-demo-message="他のプランを比較せず、最高額プランを選びました。" data-demo-tone="dark">このプランを選ぶ</button>
-    <button class="demo-button demo-button--quiet" type="button" data-demo-reveal="case10-dark-plans">すべてのプランを見る</button>
-    <div id="case10-dark-plans" class="demo-plans" hidden><div class="demo-plan">ライト<br><strong>980円</strong></div><div class="demo-plan">標準<br><strong>1,980円</strong></div></div>
+    <button class="demo-button" type="button" data-demo-message="プレミアムを選択しました。" data-demo-tone="dark">このプランを選ぶ</button>
+    <button class="demo-button demo-button--secondary" type="button" data-demo-reveal="case10-dark-plans" aria-controls="case10-dark-plans">すべてのプランを見る</button>
+    <div id="case10-dark-plans" class="demo-plans" hidden>
+      <div class="demo-plan"><strong>ライト</strong><p class="demo-price">980円</p><p class="demo-small">容量10GB</p></div>
+      <div class="demo-plan"><strong>標準</strong><p class="demo-price">1,980円</p><p class="demo-small">容量100GB</p></div>
+    </div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
       </section>
 
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <p class="demo-intro">すべてのプランを同じ画面・同じ情報量で比較できる改善例です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-cloud.jp/pricing</span></div>
   <div class="demo-body">
     <h3>プランを比較</h3>
     <div class="demo-plans">
-      <div class="demo-plan"><strong>ライト</strong><p class="demo-price">980円</p><p class="demo-small">容量10GB</p><button class="demo-button demo-button--secondary" type="button" data-demo-message="ライトを選択しました。" data-demo-tone="good">選択</button></div>
-      <div class="demo-plan demo-plan--featured"><strong>標準</strong><p class="demo-price">1,980円</p><p class="demo-small">容量100GB</p><button class="demo-button" type="button" data-demo-message="標準を選択しました。" data-demo-tone="good">選択</button></div>
-      <div class="demo-plan"><strong>プレミアム</strong><p class="demo-price">4,800円</p><p class="demo-small">容量無制限</p><button class="demo-button demo-button--secondary" type="button" data-demo-message="プレミアムを選択しました。" data-demo-tone="good">選択</button></div>
+      <div class="demo-plan"><strong>ライト</strong><p class="demo-price">980円</p><p class="demo-small">容量10GB</p><button class="demo-button demo-button--secondary" type="button" data-demo-select data-demo-message="ライトを選択しました。" data-demo-tone="good">選択</button></div>
+      <div class="demo-plan"><strong>標準</strong><p class="demo-price">1,980円</p><p class="demo-small">容量100GB</p><button class="demo-button demo-button--secondary" type="button" data-demo-select data-demo-message="標準を選択しました。" data-demo-tone="good">選択</button></div>
+      <div class="demo-plan"><strong>プレミアム</strong><p class="demo-price">4,800円</p><p class="demo-small">容量無制限</p><button class="demo-button demo-button--secondary" type="button" data-demo-select data-demo-message="プレミアムを選択しました。" data-demo-tone="good">選択</button></div>
     </div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
@@ -91,12 +93,6 @@
         <h2>解説</h2>
         <p>高額なプランだけを初期表示し、他の選択肢を「すべて見る」の先に置くと、比較できないまま契約しやすくなります。</p><p>改善例では全プランを同時に示し、価格・容量・主要機能を同じ順序と粒度で比較できるようにします。「おすすめ」は表示しても、他の選択肢を隠しません。</p>
       </section>
-
-            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
-        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
-      </div>
 
       <nav class="case-nav" aria-label="ページ移動">
       <a href="09.html">← 事例⑨</a>
@@ -110,8 +106,6 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js?v=2" defer></script>
-  <script src="../js/sidebar.js" defer></script>
-  <script src="../js/case-mocks.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

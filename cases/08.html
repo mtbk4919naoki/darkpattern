@@ -46,6 +46,7 @@
       </div>
 
       <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="source-label">資料での説明</p>
         <p class="definition">事業者が望むことを消費者に行うよう繰り返し求めるもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -58,29 +59,36 @@
       </section>
 
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
-        <p class="demo-intro">スクロール中も購入ボタンが画面下に残り、繰り返し行動を求める商品ページです。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-store.jp/item</span></div>
+  <div class="demo-stage">
   <div class="demo-body demo-body--scroll">
-    <h3>季節限定セット</h3>
-    <p>商品の特徴や原材料などを確認できます。</p>
-    <div class="demo-spacer">商品説明、レビュー、配送条件などが続きます。下へスクロールしても購入欄は追従します。</div>
-    <div class="demo-card"><strong>返品条件</strong><p class="demo-small">未開封・到着後7日以内</p></div>
-    <div class="demo-sticky"><button class="demo-button demo-button--dark" type="button" data-demo-message="どこまで読んでも表示され続ける購入ボタンを押しました。" data-demo-tone="dark">今すぐ購入する</button></div>
+    <p class="demo-badge demo-badge--dark">初回限定</p>
+    <h3>ピュアイオン・ウォーター</h3>
+    <p class="demo-price">定期初回 980円 <span class="demo-small">（2回目以降 4,800円）</span></p>
+    <p>標高1,200mの湧水を、非加熱のままボトルに詰めました。独自のセラミックでマイナスイオンをまとい、口に含んだ瞬間から、体の内側が澄むような軽さです。</p>
+    <h4>おすすめの飲み方</h4>
+    <p>朝起きてすぐ、常温のまま200ml。食事の30分前に残りの300mlをゆっくり。冷やしても構いません。常温のほうがイオンが安定します。</p>
+    <h4>原材料</h4>
+    <p>水（鉱水）。保存料・着色料・香料は不使用。1本500ml。定期便は30日ごとにお届けします。開封後は冷蔵庫で保管し、その日のうちに飲みきってください。</p>
+    <div class="demo-card"><strong>お客様の声</strong><p>「朝のコップ1杯で、なんとなく軽い。」（50代・購入者）</p><p class="demo-note-dim">※個人の感想であり、効果を保証するものではありません。</p></div>
+    <div class="demo-card"><strong>配送</strong><p class="demo-small">通常3〜5日。クール便は別料金です。</p></div>
+  </div>
+  <div class="demo-sticky"><button class="demo-button demo-button--loud" type="button" data-demo-message="購入手続きへ進みました。" data-demo-tone="dark">★★ 今すぐ購入する ★★</button></div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
       </section>
 
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <p class="demo-intro">購入ボタンを商品情報の流れの中に一度だけ置き、読んでいる間は追いかけない改善例です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-store.jp/item</span></div>
   <div class="demo-body">
-    <h3>季節限定セット</h3>
-    <p>商品の特徴、原材料、価格、配送・返品条件を確認できます。</p>
-    <div class="demo-card"><strong>価格 3,200円</strong><p class="demo-small">送料込み / 未開封は到着後7日以内返品可</p></div>
-    <div class="demo-actions"><button class="demo-button demo-button--good" type="button" data-demo-message="情報を確認した位置から購入手続きへ進みました。" data-demo-tone="good">購入手続きへ</button></div>
+    <h3>ピュアイオン・ウォーター</h3>
+    <p>標高1,200mの湧水を、非加熱のままボトルに詰めた飲料です。1本500ml。</p>
+    <div class="demo-card"><strong>定期初回 980円</strong><p class="demo-small">2回目以降は4,800円。30日ごとに届きます。電話で解約できます。</p></div>
+    <div class="demo-card"><strong>配送・返品</strong><p class="demo-small">通常3〜5日。未開封に限り、到着後7日以内は返品できます。</p></div>
+    <div class="demo-actions"><button class="demo-button demo-button--good" type="button" data-demo-message="購入手続きへ進みました。" data-demo-tone="good">購入手続きへ</button></div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
@@ -90,12 +98,6 @@
         <h2>解説</h2>
         <p>購入ボタンを常に追従させると、情報を読んで判断している間も繰り返し購入を促し続けます。特に画面が小さい端末では閲覧領域も狭くなります。</p><p>改善例では、価格・配送・返品条件を確認できる場所に購入ボタンを置きます。追従させる必要がある場合も、閉じる手段を用意し、画面を大きく占有しないようにします。</p>
       </section>
-
-            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
-        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
-      </div>
 
       <nav class="case-nav" aria-label="ページ移動">
       <a href="07.html">← 事例⑦</a>
@@ -109,8 +111,6 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js?v=2" defer></script>
-  <script src="../js/sidebar.js" defer></script>
-  <script src="../js/case-mocks.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

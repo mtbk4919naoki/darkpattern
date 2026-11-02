@@ -46,6 +46,7 @@
       </div>
 
       <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="source-label">資料での説明</p>
         <p class="definition">商品等の購入や会員登録等、事業者への申込みの手続の難易度と、解約・退会の難易度が釣り合わないもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -59,14 +60,13 @@
       </section>
 
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
-        <p class="demo-intro">解約までに引き留め画面を何度も通る必要がある手続です。「解約を続ける」を押して進めてください。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-video.jp/account/cancel</span></div>
   <div class="demo-body">
     <div id="case09-step1" class="demo-step">
       <div class="demo-progress"><span class="is-active"></span><span></span><span></span><span></span></div>
       <h3>会員特典を失います</h3><p>保存した作品、会員価格、ポイントが利用できなくなります。</p>
-      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="解約をやめました。" data-demo-tone="dark">会員を継続する</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step2">解約を続ける</button></div>
+      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="会員を継続します。" data-demo-tone="dark">会員を継続する</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step2">解約を続ける</button></div>
     </div>
     <div id="case09-step2" class="demo-step" hidden>
       <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span></span><span></span></div>
@@ -80,7 +80,7 @@
     </div>
     <div id="case09-step4" class="demo-step" hidden>
       <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span></div>
-      <h3>最終確認</h3><button class="demo-button demo-button--quiet" type="button" data-demo-message="4画面目でようやく解約できました。" data-demo-tone="dark">解約を確定する</button>
+      <h3>最終確認</h3><button class="demo-button demo-button--quiet" type="button" data-demo-message="解約しました。" data-demo-tone="dark">解約を確定する</button>
     </div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
@@ -88,7 +88,6 @@
       </section>
 
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <p class="demo-intro">アカウント画面から直接解約でき、結果と利用期限をその場で確認できる改善例です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-video.jp/account</span></div>
   <div class="demo-body">
@@ -106,12 +105,6 @@
         <p>申込みより解約だけが著しく長く、途中でデメリットや別プランを繰り返し提示する設計は、利用者の意思決定を妨げます。</p><p>改善例では契約情報の近くに解約入口を置き、確認は必要事項を示す1回にします。解約後の利用期限・請求・再開方法も結果として明示します。</p>
       </section>
 
-            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
-        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
-      </div>
-
       <nav class="case-nav" aria-label="ページ移動">
       <a href="08.html">← 事例⑧</a>
       <a href="../index.html">目次</a>
@@ -124,8 +117,6 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js?v=2" defer></script>
-  <script src="../js/sidebar.js" defer></script>
-  <script src="../js/case-mocks.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

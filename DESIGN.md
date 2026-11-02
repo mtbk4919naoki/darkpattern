@@ -108,6 +108,12 @@ components:
     rounded: "{rounded.sm}"
   button-mock-primary-hover:
     backgroundColor: "{colors.mock-accent-strong}"
+  button-mock-loud:
+    backgroundColor: "{colors.mock-accent}"
+    textColor: "{colors.on-primary}"
+  callout-source:
+    textColor: "{colors.on-surface-muted}"
+    typography: "{typography.caption}"
   mock-status-ok:
     backgroundColor: "{colors.good-soft}"
     textColor: "{colors.good}"
@@ -162,7 +168,7 @@ components:
 
 - 本文カード、選択中のタブ、目次カード: Border の境界線
 - 操作モックのブラウザ枠: Border strong の境界線と、グレーのアドレスバーで「画面の中の画面」と分かるようにする
-- ホバー: 境界線を Primary に、背景を Primary soft に変える（浮き上がらせない）
+- ホバー: 枠線のボタンとリンクは、境界線を Primary に、背景を Primary soft に変える。塗りつぶしボタンは同じ色を一段濃くする。浮き上がらせない
 
 ## Shapes
 
@@ -176,14 +182,14 @@ components:
 - **サイドバー（`.site-sidebar`）:** 目次と事例①〜⑮へのリンク。現在のページに `aria-current="page"` を付ける
 - **目次カード（`.case-list`）:** 番号バッジ（`.case-num`）と事例名。自動で2列以上に並ぶ
 - **注記（`.note`）:** 目次ページの但書。補足色・小さめの文字
-- **切替タブ（`.view-tabs`）:** 本文の上と下に同じものを置き、`js/case-tabs.js` で同期する。ボタンには `data-tab`（`overview` / `dark` / `good`）を付け、パネルの id は `panel-{data-tab}` にする
+- **切替タブ（`.view-tabs`）:** HTML には h1 の直後に1つ置く。`js/tabs.js` が同じタブを前後ナビの前にも複製し、クリックとキーボードで同期する。ボタンには `data-tab`（`overview` / `dark` / `good`）を付け、パネルの id は `panel-{data-tab}` にする
 - **定義文（`.definition`）:** 事例の要点を1文で
 - **例の一覧（`.examples`）:** Ⓐ Ⓑ などのラベルは `.label` で囲む
 - **解説（`.commentary`）:** タブを切り替えても常に表示する
 - **前後ナビ（`.case-nav`）:** 前の事例 / 目次 / 次の事例。端のページは `.spacer` で位置を揃える
 - **プレースホルダー（`.placeholder`）:** まだ書いていない場所。点線枠で未完成と分かるようにする
-- **共通操作モック（`.demo-*`）:** 事例②〜⑮は `case-mocks.css` / `case-mocks.js` の共通部品を使う。`.demo-window` の中にブラウザ枠、選択肢、カード、フィードバックなどを組み合わせる
-- **専用操作モック（`.mock-*`）:** 共通部品で表現できない場合だけ `css/case-NN-mock.css` / `js/case-NN-mock.js` に書く。事例①は初期プロトタイプとして専用実装を使っている
+- **共通操作モック（`.demo-*`）:** 事例②〜⑮は `case-mocks.css` と `js/demos.js` の共通部品を使う。`.demo-window` の中にブラウザ枠、選択肢、カード、フィードバックなどを組み合わせる
+- **専用見た目（`.mock-*`）:** 共通部品の見た目で足りない場合だけ `css/case-NN-mock.css` を追加する。事例①は初期プロトタイプの見た目を残し、動作は `js/demos.js` にまとめている
 
 ## Do's and Don'ts
 

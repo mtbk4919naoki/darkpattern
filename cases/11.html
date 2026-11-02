@@ -46,6 +46,7 @@
       </div>
 
       <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="source-label">資料での説明</p>
         <p class="definition">費用が複数の形式で表示されるなど不明瞭になっている、又は契約締結プロセスの終盤で明らかにされるもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -59,7 +60,6 @@
       </section>
 
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
-        <p class="demo-intro">税・送料・手数料を別の段階で追加し、最後まで総額が分からない購入手続です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-ticket.jp/checkout</span></div>
   <div class="demo-body">
@@ -68,7 +68,7 @@
     <button class="demo-button" type="button" data-demo-reveal="case11-dark-total">購入内容を確認</button>
     <div id="case11-dark-total" class="demo-card" hidden>
       <table class="demo-table"><tr><td>商品</td><td>10,000円</td></tr><tr><td>消費税</td><td>1,000円</td></tr><tr><td>発券手数料</td><td>880円</td></tr><tr><td>決済手数料</td><td>440円</td></tr><tr><th>合計</th><th>12,320円</th></tr></table>
-      <button class="demo-button demo-button--dark" type="button" data-demo-message="最終段階で2,320円が追加されたまま購入しました。" data-demo-tone="dark">12,320円を支払う</button>
+      <button class="demo-button demo-button--dark" type="button" data-demo-message="12,320円で購入しました。" data-demo-tone="dark">12,320円を支払う</button>
     </div>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
@@ -76,7 +76,6 @@
       </section>
 
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <p class="demo-intro">選択前から税込総額と必須手数料の内訳をまとめて示す改善例です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-ticket.jp/checkout</span></div>
   <div class="demo-body">
@@ -84,7 +83,7 @@
     <p class="demo-price">12,320円（税込）</p>
     <table class="demo-table"><tr><td>チケット（税込）</td><td>11,000円</td></tr><tr><td>発券手数料</td><td>880円</td></tr><tr><td>決済手数料</td><td>440円</td></tr><tr><th>合計</th><th>12,320円</th></tr></table>
     <p class="demo-small">この後、必須費用は追加されません。</p>
-    <button class="demo-button demo-button--good" type="button" data-demo-message="総額と内訳を確認して支払画面へ進みました。" data-demo-tone="good">支払方法を選ぶ</button>
+    <button class="demo-button demo-button--good" type="button" data-demo-message="支払方法の選択へ進みました。" data-demo-tone="good">支払方法を選ぶ</button>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
@@ -94,12 +93,6 @@
         <h2>解説</h2>
         <p>税別・税込表示が途中で変わる、必須手数料が最終画面で初めて加わる設計では、比較時に想定した金額と支払額がずれます。</p><p>改善例では、選択の時点から税込総額を主表示にし、避けられない費用を内訳として並べます。利用者の選択で変わる送料などは、条件を入力した時点で更新します。</p>
       </section>
-
-            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
-        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
-      </div>
 
       <nav class="case-nav" aria-label="ページ移動">
       <a href="10.html">← 事例⑩</a>
@@ -113,8 +106,6 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js?v=2" defer></script>
-  <script src="../js/sidebar.js" defer></script>
-  <script src="../js/case-mocks.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

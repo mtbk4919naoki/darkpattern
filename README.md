@@ -11,9 +11,7 @@
 - `css/style.css` — 共通スタイル（Open Props と `tokens.css` を読み込む）
 - `css/tokens.css` — デザイントークン
 - `css/case-mocks.css` — 事例②〜⑮で共用する操作モック部品
-- `js/case-tabs.js` — タブ切替（上下同期）
-- `js/case-mocks.js` — モックの表示切替・手順移動・結果表示・タイマー
-- `js/sidebar.js` — 狭い画面でのサイドバー開閉
+- `js/main.js` — 入口（タブ、サイドバー、モック）
 - `assets/img/` — イラスト（PDF 由来の `illust-*.png`、改善例用 `good-*.png`）
 - `DESIGN.md` — デザインシステム（色・文字・余白とコンポーネントの使い方）
 - `AGENTS.md` — AI エージェント向けの構築ルールとチェック手順

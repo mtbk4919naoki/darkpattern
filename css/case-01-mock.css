@@ -90,13 +90,26 @@
   border: 2px solid var(--mock-ink);
 }
 
+.mock-btn--secondary:hover {
+  color: var(--color-primary-strong);
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+}
+
 .mock-btn--ghost {
   margin-bottom: var(--space-3);
   padding: var(--space-2);
   font-size: var(--text-sm);
-  font-weight: 400;
-  color: var(--color-text-muted);
-  background: var(--color-surface-muted);
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+}
+
+.mock-btn--ghost:hover {
+  color: var(--color-primary-strong);
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
 }
 
 .mock-btn--guest-good {

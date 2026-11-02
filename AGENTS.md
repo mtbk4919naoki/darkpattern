@@ -16,7 +16,8 @@
 
 - HTML + CSS + 素の JavaScript。ビルドなし、npm 依存なし
 - CSS の土台は [Open Props](https://open-props.style/) v1.7.23（`css/vendor/open-props.min.css` に同梱）
-- 読み込み順: `css/style.css` の先頭で `vendor/open-props.min.css` → `tokens.css` を `@import` している。HTML からは `style.css`（と必要なら `case-NN-mock.css`）だけを読み込む
+- 読み込み順: `css/style.css` の先頭で `vendor/open-props.min.css` → `tokens.css` を `@import` している。HTML からは `style.css`（と必要なら `case-mocks.css` または `case-NN-mock.css`）だけを読み込む
+- JavaScript は `js/main.js` を `<script type="module">` で1本だけ読み込む。即時実行関数や `var` は使わない
 
 ```text
 css/
@@ -26,10 +27,10 @@ css/
   case-mocks.css             事例②〜⑮で共用する操作モック部品
   case-NN-mock.css           事例 NN の操作モック専用
 js/
-  case-tabs.js               切替タブ（上下2か所を同期、URL の #overview / #dark / #good に対応）
+  main.js                    入口。タブ、サイドバー、モックを初期化する
+  tabs.js                    上部タブから下部タブを複製し、クリックとキーボードで同期する
   sidebar.js                 狭い画面でのサイドバー開閉
-  case-mocks.js              共通モックの結果表示、開閉、手順移動、タイマー
-  case-NN-mock.js            事例 NN の操作モック専用
+  demos.js                   共通モックと事例①モックの結果表示、開閉、手順移動、タイマー
 assets/img/NN/
   illust-*.png               PDF から抽出したイラスト
   good-*.png                 改善例の画像（追加するとき）
@@ -55,14 +56,14 @@ http://localhost:8080/ を開く。
 
 ## 事例ページの組み立てルール
 
-新しいタブやモックを追加するときは、共通部品を使う事例②〜⑮を手本にする。事例①の専用CSS/JSは初期プロトタイプとして残している。
+新しいタブやモックを追加するときは、共通部品を使う事例②〜⑮を手本にする。事例①の見た目だけ `css/case-01-mock.css` に残している。
 
 - サイドバーは全ページ同じリストを持ち、現在のページのリンクに `aria-current="page"` を付ける
-- 切替タブ `.view-tabs` は h1 の直後と、解説の後（前後ナビの前）の2か所に置く。下部のタブには `id` を付けない
+- 切替タブ `.view-tabs` は h1 の直後に1つだけ置く。下部のタブは `tabs.js` が前後ナビの前へ複製する
 - タブのボタンに `data-tab="overview|dark|good"` を付け、対応するパネルの id は `panel-overview` / `panel-dark` / `panel-good` にする
 - 最初に表示するパネル以外には `hidden` を付ける
 - 概要パネルには PDF 由来の定義文（`.definition`）、例（`.examples`）、イラスト（`.figures`）を入れる
-- ダークパターン / 改善例パネルの操作モックは `.demo-window` で囲み、`case-mocks.css` / `case-mocks.js` の `.demo-*` 共通部品を優先する
+- ダークパターン / 改善例パネルの操作モックは `.demo-window` で囲み、`case-mocks.css` と `js/demos.js` の `.demo-*` 共通部品を優先する
 - 共通部品で表現できない場合だけ `case-NN-mock.css` / `case-NN-mock.js` を追加し、専用クラス名を `.mock-` で始める
 - 解説 `.commentary` はタブの外に置き、どのタブでも表示されるようにする
 - 未作成の部分は `.placeholder` で示す

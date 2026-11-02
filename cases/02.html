@@ -46,6 +46,7 @@
       </div>
 
       <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="source-label">資料での説明</p>
         <p class="definition">だまされて又は強制されて、商品の購入やサービスを利用する上で必要と考えられる範囲を超えて、個人情報を共有してしまうもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -59,18 +60,18 @@
       </section>
 
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
-        <p class="demo-intro">拒否ボタンがなく、閉じても同意済みになるクッキーバナーです。ボタンを押して結果を確認してください。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-news.jp/article</span></div>
   <div class="demo-body">
-    <h3>ニュース記事</h3>
-    <p class="demo-muted">記事本文を読む前に、画面下のバナーが表示されます。</p>
+    <h3>今朝の天気</h3>
+    <p>関東は晴れ。日中の最高気温は22度の見込みです。</p>
     <div class="demo-banner">
       <strong>Cookieを使用しています</strong>
       <p class="demo-small">サイトの利便性向上と広告配信のためにCookieを使用します。</p>
+      <p class="demo-note-dim">このまま閲覧を続けると、Cookieの使用に同意したことになります。</p>
       <div class="demo-actions">
-        <button class="demo-button" type="button" data-demo-message="すべてのCookieに同意しました。" data-demo-tone="dark">同意する</button>
-        <button class="demo-button demo-button--quiet" type="button" data-demo-message="バナーを閉じましたが、設定上はすべて同意済みになりました。" data-demo-tone="dark">× 閉じる</button>
+        <button class="demo-button" type="button" data-demo-message="すべてのクッキーに同意しました。" data-demo-tone="dark">同意する</button>
+        <button class="demo-button demo-button--quiet" type="button" data-demo-message="閉じても、すべて同意したことになります。" data-demo-tone="dark">× 閉じる</button>
       </div>
     </div>
   </div>
@@ -79,7 +80,6 @@
       </section>
 
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <p class="demo-intro">同意・拒否・個別設定を同じ階層に置き、閉じる操作を同意として扱わない改善例です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-news.jp/article</span></div>
   <div class="demo-body">
@@ -92,7 +92,7 @@
       <label class="demo-option"><input type="checkbox"><span><strong>広告Cookie</strong><small>興味に合わせた広告を表示します。</small></span></label>
     </fieldset>
     <div class="demo-actions">
-      <button class="demo-button demo-button--secondary" type="button" data-demo-message="任意Cookieを拒否して保存しました。" data-demo-tone="good">すべて拒否</button>
+      <button class="demo-button demo-button--secondary" type="button" data-demo-message="任意のクッキーを拒否しました。" data-demo-tone="good">すべて拒否</button>
       <button class="demo-button" type="button" data-demo-message="選択した内容を保存しました。" data-demo-tone="good">選択を保存</button>
     </div>
   </div>
@@ -102,14 +102,8 @@
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p>拒否の選択肢がない、または閉じる操作を同意とみなす設計では、利用者は情報提供を事実上強制されます。</p><p>改善例では、同意と拒否を同じ画面・同程度の目立ち方で提示し、目的ごとに選択できるようにします。必須でないCookieは初期状態をオフにします。</p>
+        <p>拒否の選択肢がない、または閉じる操作を同意とみなす設計では、利用者は情報提供を事実上強制されます。</p><p>改善例では、同意と拒否を同じ画面・同程度の目立ち方で提示し、目的ごとに選択できるようにします。必須でないクッキーは、最初からオフにします。</p>
       </section>
-
-            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
-        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
-      </div>
 
       <nav class="case-nav" aria-label="ページ移動">
       <a href="01.html">← 事例①</a>
@@ -123,8 +117,6 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js?v=2" defer></script>
-  <script src="../js/sidebar.js" defer></script>
-  <script src="../js/case-mocks.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>

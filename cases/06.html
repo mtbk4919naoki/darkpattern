@@ -46,6 +46,7 @@
       </div>
 
       <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="source-label">資料での説明</p>
         <p class="definition">質問が二重否定であるなど、消費者が誤解しやすい表現になっているもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -57,28 +58,26 @@
       </section>
 
       <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
-        <p class="demo-intro">否定形の質問で、チェックの意味を取り違えやすくした配信設定です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-shop.jp/profile</span></div>
   <div class="demo-body">
     <h3>お知らせ設定</h3>
     <label class="demo-option"><input type="checkbox"><span>新商品やキャンペーンについて、事業者からのお知らせを<strong>希望しません</strong></span></label>
     <p class="demo-small">チェックを入れない場合はメールを配信します。</p>
-    <button class="demo-button" type="button" data-demo-message="否定形の設定を保存しました。配信されるか判断しにくい状態です。" data-demo-tone="dark">設定を保存</button>
+    <button class="demo-button" type="button" data-demo-message="設定を保存しました。" data-demo-tone="dark">設定を保存</button>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
       </section>
 
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <p class="demo-intro">肯定形の質問にし、未選択を「配信しない」とした改善例です。</p>
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-shop.jp/profile</span></div>
   <div class="demo-body">
     <h3>メール配信設定</h3>
     <label class="demo-option"><input type="checkbox"><span><strong>新商品やキャンペーンのお知らせを受け取る</strong><small>月2回程度。いつでも停止できます。</small></span></label>
     <p class="demo-small">チェックを入れない限り配信されません。</p>
-    <button class="demo-button demo-button--good" type="button" data-demo-message="分かりやすい設定内容を保存しました。" data-demo-tone="good">設定を保存</button>
+    <button class="demo-button demo-button--good" type="button" data-demo-message="設定を保存しました。" data-demo-tone="good">設定を保存</button>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
@@ -88,12 +87,6 @@
         <h2>解説</h2>
         <p>「希望しません」にチェックする方式は、一般的な「希望する場合にチェック」という習慣と逆で、意図しない配信同意につながります。</p><p>改善例では肯定形で尋ね、何も選ばなければ配信しない状態にします。配信頻度と停止方法も同じ場所に書きます。</p>
       </section>
-
-            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
-        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
-      </div>
 
       <nav class="case-nav" aria-label="ページ移動">
       <a href="05.html">← 事例⑤</a>
@@ -107,8 +100,6 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js?v=2" defer></script>
-  <script src="../js/sidebar.js" defer></script>
-  <script src="../js/case-mocks.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
 </body>
 </html>
