@@ -3,6 +3,7 @@ const triggerSelector = [
   "[data-demo-reveal]",
   "[data-demo-step]",
   "[data-demo-toggle]",
+  "[data-demo-dismiss]",
   "[data-mock-action]",
 ].join(",");
 
@@ -41,8 +42,16 @@ const selectPlan = (trigger) => {
     const selected = item === plan;
     item.classList.toggle("is-selected", selected);
     const button = item.querySelector("[data-demo-select]");
-    if (button) button.textContent = selected ? "選択中" : "選択";
+    if (!button) continue;
+    const label = button.dataset.demoSelectLabel || "選択";
+    button.textContent = selected ? "選択中" : label;
   }
+};
+
+const dismiss = (trigger) => {
+  if (!trigger.hasAttribute("data-demo-dismiss")) return;
+  const target = trigger.closest(".demo-sticky");
+  if (target) target.hidden = true;
 };
 
 const showStep = (trigger, id) => {
@@ -81,6 +90,7 @@ export function initDemos() {
 
     showFeedback(trigger);
     selectPlan(trigger);
+    dismiss(trigger);
     if (trigger.dataset.demoReveal) reveal(trigger.dataset.demoReveal);
     if (trigger.dataset.demoToggle) toggle(trigger.dataset.demoToggle);
     if (trigger.dataset.demoStep) showStep(trigger, trigger.dataset.demoStep);

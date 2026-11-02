@@ -62,13 +62,14 @@
 <div class="demo-window">
   <div class="demo-chrome"><span class="demo-url">example-cloud.jp/pricing</span></div>
   <div class="demo-body">
-    <span class="demo-badge">おすすめ</span><h3>プレミアムプラン</h3><p class="demo-price">月額 4,800円</p><p>全機能・優先サポート・容量無制限</p>
-    <button class="demo-button" type="button" data-demo-message="プレミアムを選択しました。" data-demo-tone="dark">このプランを選ぶ</button>
-    <button class="demo-button demo-button--secondary" type="button" data-demo-reveal="case10-dark-plans" aria-controls="case10-dark-plans">すべてのプランを見る</button>
-    <div id="case10-dark-plans" class="demo-plans" hidden>
-      <div class="demo-plan"><strong>ライト</strong><p class="demo-price">980円</p><p class="demo-small">容量10GB</p></div>
-      <div class="demo-plan"><strong>標準</strong><p class="demo-price">1,980円</p><p class="demo-small">容量100GB</p></div>
+    <div class="demo-plans">
+      <div class="demo-plan demo-plan--featured"><span class="demo-badge">おすすめ</span><h3>プレミアムプラン</h3><p class="demo-price">月額 4,800円</p><p>全機能・優先サポート・容量無制限</p><button class="demo-button" type="button" data-demo-select data-demo-select-label="このプランを選ぶ" data-demo-message="プレミアムを選択しました。" data-demo-tone="dark">このプランを選ぶ</button></div>
+      <div id="case10-dark-plans" class="demo-plan-more" hidden>
+        <div class="demo-plan"><strong>ライト</strong><p class="demo-price">980円</p><p class="demo-small">容量10GB</p><button class="demo-button demo-button--secondary" type="button" data-demo-select data-demo-message="ライトを選択しました。" data-demo-tone="dark">選択</button></div>
+        <div class="demo-plan"><strong>標準</strong><p class="demo-price">1,980円</p><p class="demo-small">容量100GB</p><button class="demo-button demo-button--secondary" type="button" data-demo-select data-demo-message="標準を選択しました。" data-demo-tone="dark">選択</button></div>
+      </div>
     </div>
+    <button class="demo-button demo-button--secondary" type="button" data-demo-reveal="case10-dark-plans" aria-controls="case10-dark-plans">すべてのプランを見る</button>
   </div>
   <p class="demo-feedback" aria-live="polite"></p>
 </div>
