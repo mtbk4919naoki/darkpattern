@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例③ 隠された情報 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例③ 隠された情報</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">重要な情報が不明瞭にされているもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -56,19 +58,48 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">「全額返金」を強調し、重要な返金条件を小さな「詳細」の中に隠した商品画面です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-beauty.jp/item</span></div>
+  <div class="demo-body">
+    <span class="demo-badge demo-badge--dark">満足できなければ</span>
+    <h3>全額返金保証</h3>
+    <p class="demo-price">初回 980円</p>
+    <button class="demo-button" type="button" data-demo-message="返金条件を読まずに購入手続きへ進みました。" data-demo-tone="dark">今すぐ購入</button>
+    <button class="demo-button demo-button--quiet" type="button" data-demo-toggle="case03-dark-detail">詳細</button>
+    <div id="case03-dark-detail" class="demo-faint" hidden>返金対象は未開封の商品に限ります。商品到着後7日以内に電話で申請し、送料は購入者負担です。</div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">返金条件を保証表示のすぐ近くに、本文と同じ読みやすさで示した改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-beauty.jp/item</span></div>
+  <div class="demo-body">
+    <h3>返金保証の条件</h3>
+    <div class="demo-banner demo-banner--good">
+      <strong>未開封・到着後7日以内が対象です</strong>
+      <ul><li>電話で申請してください</li><li>返送送料は購入者負担です</li></ul>
+    </div>
+    <p class="demo-price">初回 980円</p>
+    <label class="demo-option"><input type="checkbox"><span>返金条件を確認しました</span></label>
+    <button class="demo-button demo-button--good" type="button" data-demo-message="条件を確認して購入手続きへ進みました。" data-demo-tone="good">購入手続きへ</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>大きな「全額返金」の表示だけを見せ、対象条件を折りたたみや小さい文字に置くと、保証範囲を実際より広く受け取らせます。</p><p>改善例では、重要な制限を保証表示と価格の近くに常時表示し、購入前に確認できる順序にします。「詳細」を開かなくても判断に必要な情報が読めることが重要です。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -84,7 +115,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

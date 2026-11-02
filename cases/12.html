@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑫ お客様の声(1) | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑫ お客様の声(1)</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">商品等を購入した他の消費者の評価や口コミに関する表示であって、誤解を招くものや虚偽の可能性があるもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -54,19 +56,42 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">PC版とスマートフォン版で、別人のように見せながら同じ口コミを掲載する例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-food.jp/reviews</span></div>
+  <div class="demo-body">
+    <h3>お客様の声</h3>
+    <div class="demo-review"><div class="demo-row"><span class="demo-avatar">A</span><div><strong>東京都 A.Kさん</strong><p>毎朝すっきり。家族にもすすめたい商品です！</p></div></div></div>
+    <button class="demo-button demo-button--quiet" type="button" data-demo-reveal="case12-duplicate">スマートフォン版の口コミを見る</button>
+    <div id="case12-duplicate" class="demo-review" hidden><div class="demo-row"><span class="demo-avatar">B</span><div><strong>大阪府 M.Sさん</strong><p>毎朝すっきり。家族にもすすめたい商品です！</p><span class="demo-faint">別人なのに本文が完全に同一</span></div></div></div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">購入確認を行い、掲載基準と投稿日を明示した口コミ欄の改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-food.jp/reviews</span></div>
+  <div class="demo-body">
+    <h3>購入者レビュー</h3>
+    <div class="demo-review"><span class="demo-badge">購入確認済み</span><strong> 2026年10月12日</strong><p>味は飲みやすいです。2週間続けていますが、変化はまだ分かりません。</p></div>
+    <div class="demo-review"><span class="demo-badge">購入確認済み</span><strong> 2026年9月28日</strong><p>配送が早かったです。少し甘く感じました。</p></div>
+    <div class="demo-actions"><button class="demo-button demo-button--secondary" type="button" data-demo-message="低い評価を含め、新しい順に並べました。" data-demo-tone="good">新しい順</button><button class="demo-button demo-button--secondary" type="button" data-demo-message="すべての評価を表示しています。" data-demo-tone="good">評価を絞り込む</button></div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>同じ文章を別人の口コミとして見せると、独立した複数の評価があるように誤認させます。好意的な口コミだけを選ぶ場合も全体像が分かりません。</p><p>改善例では購入確認、投稿日、掲載・並び替え基準を示し、低評価を含むすべてのレビューへアクセスできるようにします。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -82,7 +107,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例④ 事前選択 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例④ 事前選択</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">事業者の望む選択肢がデフォルトで事前選択されているもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -54,19 +56,51 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">高価なサイズと定期コースが最初から選ばれている注文画面です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-health.jp/order</span></div>
+  <div class="demo-body">
+    <h3>商品を選択</h3>
+    <fieldset class="demo-fieldset"><legend>サイズ</legend>
+      <label class="demo-option"><input type="radio" name="dark-size"><span>通常サイズ <strong>2,800円</strong></span></label>
+      <label class="demo-option"><input type="radio" name="dark-size" checked><span><span class="demo-badge">おすすめ</span> お徳用サイズ <strong>5,200円</strong></span></label>
+    </fieldset>
+    <label class="demo-option"><input type="checkbox" checked><span><strong>毎月お届けコース</strong><small>停止するまで毎月届きます</small></span></label>
+    <button class="demo-button" type="button" data-demo-message="初期選択のまま、5,200円の定期コースをカートに入れました。" data-demo-tone="dark">カートに入れる</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">初期選択をせず、価格と契約種別を分けて利用者に選んでもらう改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-health.jp/order</span></div>
+  <div class="demo-body">
+    <h3>商品を選択</h3>
+    <fieldset class="demo-fieldset"><legend>1. サイズを選択（必須）</legend>
+      <label class="demo-option"><input type="radio" name="good-size"><span>通常サイズ <strong>2,800円</strong></span></label>
+      <label class="demo-option"><input type="radio" name="good-size"><span>お徳用サイズ <strong>5,200円</strong></span></label>
+    </fieldset>
+    <fieldset class="demo-fieldset"><legend>2. 購入方法を選択（必須）</legend>
+      <label class="demo-option"><input type="radio" name="good-course"><span>今回のみ購入</span></label>
+      <label class="demo-option"><input type="radio" name="good-course"><span>毎月お届け（停止するまで継続）</span></label>
+    </fieldset>
+    <button class="demo-button demo-button--good" type="button" data-demo-message="選択内容を確認する画面へ進みます。" data-demo-tone="good">選択内容を確認</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>価格が高い商品や継続契約を事前に選択すると、利用者が選んだつもりのない内容で注文しやすくなります。</p><p>改善例では選択肢を未選択から始め、商品仕様と契約種別を分けて明示します。継続条件は選択肢の本文に書き、確認画面でも再表示します。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -82,7 +116,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

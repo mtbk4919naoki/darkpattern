@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑭ No.1表示/高満足度 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑭ No.1表示/高満足度</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">商品等の売上や性能に関するランキング1位の表示や、高い満足度の表示があるもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -54,19 +56,44 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">商品の性能評価に見える「No.1」を大きく示し、実際はイメージ調査であることを小さく置いた広告です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-cosme.jp/ranking</span></div>
+  <div class="demo-body">
+    <span class="demo-badge demo-badge--dark">三冠達成</span>
+    <h3>シミに期待できる美容液 No.1</h3>
+    <p class="demo-price">満足度 98%</p>
+    <p class="demo-faint">※ブランドのイメージ調査。20〜60代女性100名、2026年8月、当社調べ。</p>
+    <button class="demo-button demo-button--dark" type="button" data-demo-message="使用効果の調査だと思って申込画面へ進みました。" data-demo-tone="dark">No.1美容液を試す</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">何を調べた順位かを見出しと同じ場所で明示し、調査方法も確認できる改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-cosme.jp/research</span></div>
+  <div class="demo-body">
+    <h3>ブランドイメージ調査で1位</h3>
+    <div class="demo-banner demo-banner--good"><strong>これは使用効果・売上・満足度の順位ではありません</strong></div>
+    <p>20〜60代女性100名に、ブランド名と広告画像を見せて回答を得た調査です。</p>
+    <button class="demo-button demo-button--secondary" type="button" data-demo-reveal="case14-method">調査方法を確認</button>
+    <div id="case14-method" class="demo-card" hidden><strong>調査概要</strong><p class="demo-small">実施: 2026年8月 / 対象: 100名 / 比較: 5ブランド / 質問: 期待感に関する印象</p></div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>「No.1」の対象がイメージなのに、効果・売上・満足度の順位のように見せると、調査結果の意味を誤解させます。</p><p>改善例では「ブランドイメージ調査」と主表示に含め、何の順位ではないかも説明します。対象者数、比較対象、実施時期、質問内容へすぐアクセスできるようにします。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -82,7 +109,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

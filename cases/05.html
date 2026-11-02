@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑤ 不当参照価格 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑤ 不当参照価格</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">誤解を招く又は虚偽の参照価格からの割引価格という形で価格が表示されているもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -54,19 +56,43 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">販売実績が不明な「通常価格」を取り消し線で示し、大幅値引きに見せる商品画面です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-cosme.jp/serum</span></div>
+  <div class="demo-body">
+    <span class="demo-badge demo-badge--dark">初回限定 91%OFF</span>
+    <h3>プレミアム美容液</h3>
+    <p class="demo-price"><s>通常価格 11,000円</s>980円</p>
+    <p class="demo-faint">※当社通常価格との比較</p>
+    <button class="demo-button demo-button--dark" type="button" data-demo-message="通常価格の販売実績を確認できないまま注文へ進みました。" data-demo-tone="dark">91%OFFで申し込む</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">比較根拠のない参照価格を使わず、支払う価格と適用条件をそのまま示す改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-cosme.jp/serum</span></div>
+  <div class="demo-body">
+    <h3>プレミアム美容液</h3>
+    <p class="demo-price">初回 980円</p>
+    <div class="demo-banner demo-banner--good"><strong>2回目以降は1本 4,800円</strong><br><span class="demo-small">定期購入・回数の縛りなし。次回発送の10日前まで解約できます。</span></div>
+    <button class="demo-button demo-button--good" type="button" data-demo-message="価格と継続条件を確認して申込画面へ進みました。" data-demo-tone="good">申込内容を確認</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>実際に通常価格で販売した実績がないのに高い参照価格を置くと、値引き幅を実際より大きく感じさせます。</p><p>改善例では、根拠を説明できない比較価格を表示せず、今回と次回以降に支払う金額を直接示します。比較を行う場合は、対象期間や販売実績などの根拠を表示します。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -82,7 +108,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

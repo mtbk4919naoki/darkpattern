@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑨ キャンセル困難 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑨ キャンセル困難</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">商品等の購入や会員登録等、事業者への申込みの手続の難易度と、解約・退会の難易度が釣り合わないもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -56,19 +58,57 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">解約までに引き留め画面を何度も通る必要がある手続です。「解約を続ける」を押して進めてください。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-video.jp/account/cancel</span></div>
+  <div class="demo-body">
+    <div id="case09-step1" class="demo-step">
+      <div class="demo-progress"><span class="is-active"></span><span></span><span></span><span></span></div>
+      <h3>会員特典を失います</h3><p>保存した作品、会員価格、ポイントが利用できなくなります。</p>
+      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="解約をやめました。" data-demo-tone="dark">会員を継続する</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step2">解約を続ける</button></div>
+    </div>
+    <div id="case09-step2" class="demo-step" hidden>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span></span><span></span></div>
+      <h3>お得な休会プランはいかがですか？</h3><p>月額を半額にして3か月継続できます。</p>
+      <div class="demo-actions"><button class="demo-button" type="button" data-demo-message="休会プランへ変更しました。" data-demo-tone="dark">休会に変更</button><button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step3">解約を続ける</button></div>
+    </div>
+    <div id="case09-step3" class="demo-step" hidden>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span></span></div>
+      <h3>解約理由を教えてください</h3><label class="demo-option"><input type="radio" name="reason">料金が高い</label><label class="demo-option"><input type="radio" name="reason">使わない</label>
+      <button class="demo-button demo-button--quiet" type="button" data-demo-step="case09-step4">次へ</button>
+    </div>
+    <div id="case09-step4" class="demo-step" hidden>
+      <div class="demo-progress"><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span><span class="is-active"></span></div>
+      <h3>最終確認</h3><button class="demo-button demo-button--quiet" type="button" data-demo-message="4画面目でようやく解約できました。" data-demo-tone="dark">解約を確定する</button>
+    </div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">アカウント画面から直接解約でき、結果と利用期限をその場で確認できる改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-video.jp/account</span></div>
+  <div class="demo-body">
+    <h3>契約の管理</h3>
+    <div class="demo-card"><strong>スタンダードプラン 月額1,200円</strong><p class="demo-small">次回更新日: 2026年11月30日</p></div>
+    <div class="demo-actions"><button class="demo-button demo-button--secondary" type="button" data-demo-message="プラン変更画面へ進みました。" data-demo-tone="neutral">プランを変更</button><button class="demo-button demo-button--dark" type="button" data-demo-reveal="case09-good-confirm">解約する</button></div>
+    <div id="case09-good-confirm" class="demo-banner demo-banner--good" hidden><strong>解約しますか？</strong><p class="demo-small">11月30日までは利用できます。追加料金はありません。</p><button class="demo-button demo-button--good" type="button" data-demo-message="解約しました。利用期限は11月30日です。" data-demo-tone="good">解約を確定</button></div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>申込みより解約だけが著しく長く、途中でデメリットや別プランを繰り返し提示する設計は、利用者の意思決定を妨げます。</p><p>改善例では契約情報の近くに解約入口を置き、確認は必要事項を示す1回にします。解約後の利用期限・請求・再開方法も結果として明示します。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -84,7 +124,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

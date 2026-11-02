@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑦ 感情のゆさぶり | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑦ 感情のゆさぶり</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">消費者に特定の選択肢を選ばせるため、感情を利用して人を操る言い回しになっているもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -55,19 +57,49 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">オプションを断る選択に不安や罪悪感を伴う言葉を使った確認画面です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-travel.jp/booking</span></div>
+  <div class="demo-body">
+    <div class="demo-modal">
+      <span class="demo-badge demo-badge--dark">本当に大丈夫？</span>
+      <h3>補償なしで旅行しますか？</h3>
+      <p>もしもの事故で高額な負担が発生しても、当社は責任を負えません。</p>
+      <div class="demo-actions">
+        <button class="demo-button demo-button--dark" type="button" data-demo-message="不安を感じて補償オプションを追加しました。" data-demo-tone="dark">安心の補償に加入する</button>
+        <button class="demo-button demo-button--quiet" type="button" data-demo-message="『危険を承知した人』として加入せず進みました。" data-demo-tone="dark">危険を承知で補償なし</button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">事実を簡潔に説明し、加入・非加入を中立な言葉で選べる改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-travel.jp/booking</span></div>
+  <div class="demo-body">
+    <h3>旅行補償オプション</h3>
+    <div class="demo-card"><strong>料金: 1,200円</strong><p class="demo-small">旅行中の治療費を最大100万円まで補償します。詳しい対象・対象外条件を確認できます。</p></div>
+    <div class="demo-actions">
+      <button class="demo-button demo-button--good" type="button" data-demo-message="補償を追加しました。" data-demo-tone="good">補償を追加する</button>
+      <button class="demo-button demo-button--secondary" type="button" data-demo-message="補償を追加せず次へ進みました。" data-demo-tone="good">追加せず次へ</button>
+    </div>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>「危険を承知で」「本当に大丈夫？」などの言葉は、選択に必要な事実ではなく感情を刺激し、事業者が望む行動へ誘導します。</p><p>改善例では料金・補償範囲・対象外条件を提示し、どちらのボタンも中立な表現にします。断る選択を責めないことが重要です。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -83,7 +115,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

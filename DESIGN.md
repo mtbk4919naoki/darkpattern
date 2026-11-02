@@ -15,6 +15,7 @@ colors:
   on-surface: "#212529"
   on-surface-muted: "#495057"
   dark: "#c92a2a"
+  dark-soft: "#fff5f5"
   good: "#237a36"
   good-soft: "#ebfbee"
   mock-accent: "#c2410c"
@@ -80,6 +81,9 @@ components:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.on-surface}"
   tab-selected-dark:
+    textColor: "{colors.dark}"
+  callout-dark:
+    backgroundColor: "{colors.dark-soft}"
     textColor: "{colors.dark}"
   tab-selected-good:
     textColor: "{colors.good}"
@@ -178,7 +182,8 @@ components:
 - **解説（`.commentary`）:** タブを切り替えても常に表示する
 - **前後ナビ（`.case-nav`）:** 前の事例 / 目次 / 次の事例。端のページは `.spacer` で位置を揃える
 - **プレースホルダー（`.placeholder`）:** まだ書いていない場所。点線枠で未完成と分かるようにする
-- **操作モック（`.mock-*`）:** `css/case-NN-mock.css` に事例ごとに書く。ブラウザ枠（`.mock-browser`）の中は「架空のお店」なので Mock accent を使ってよい。押した結果は `.mock-status` に表示する
+- **共通操作モック（`.demo-*`）:** 事例②〜⑮は `case-mocks.css` / `case-mocks.js` の共通部品を使う。`.demo-window` の中にブラウザ枠、選択肢、カード、フィードバックなどを組み合わせる
+- **専用操作モック（`.mock-*`）:** 共通部品で表現できない場合だけ `css/case-NN-mock.css` / `js/case-NN-mock.js` に書く。事例①は初期プロトタイプとして専用実装を使っている
 
 ## Do's and Don'ts
 

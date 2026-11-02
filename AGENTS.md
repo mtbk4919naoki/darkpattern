@@ -6,11 +6,11 @@
 
 - 目次 `index.html` と、事例①〜⑮の `cases/01.html`〜`cases/15.html`
 - 事例ページは「概要 / ダークパターン事例 / 改善例」の切替タブと、常時表示の解説で構成する
-- 現在3タブすべてを実装済みなのは事例①だけ。②〜⑮は「ダークパターン事例 / 改善例」の2タブで、中身はプレースホルダー
+- 事例①〜⑮のすべてに、事例固有のダークパターンモック・改善モック・解説を実装済み
 
 ## 必読
 
-- `DESIGN.md` — 見た目を変える作業の前に必ず読む。色・文字・余白・角丸・影の値と、コンポーネントの使い方の正本
+- `DESIGN.md` — 見た目を変える作業の前に必ず読む。色・文字・余白・角丸と、コンポーネントの使い方の正本
 
 ## 技術構成
 
@@ -23,10 +23,12 @@ css/
   vendor/open-props.min.css  外部ライブラリ。編集しない
   tokens.css                 Open Props を意味のある名前に置き換える層。色コードはここだけ
   style.css                  サイト共通のコンポーネント
+  case-mocks.css             事例②〜⑮で共用する操作モック部品
   case-NN-mock.css           事例 NN の操作モック専用
 js/
   case-tabs.js               切替タブ（上下2か所を同期、URL の #overview / #dark / #good に対応）
   sidebar.js                 狭い画面でのサイドバー開閉
+  case-mocks.js              共通モックの結果表示、開閉、手順移動、タイマー
   case-NN-mock.js            事例 NN の操作モック専用
 assets/img/NN/
   illust-*.png               PDF から抽出したイラスト
@@ -53,14 +55,15 @@ http://localhost:8080/ を開く。
 
 ## 事例ページの組み立てルール
 
-新しいタブやモックを追加するときは `cases/01.html` を手本にする。
+新しいタブやモックを追加するときは、共通部品を使う事例②〜⑮を手本にする。事例①の専用CSS/JSは初期プロトタイプとして残している。
 
 - サイドバーは全ページ同じリストを持ち、現在のページのリンクに `aria-current="page"` を付ける
 - 切替タブ `.view-tabs` は h1 の直後と、解説の後（前後ナビの前）の2か所に置く。下部のタブには `id` を付けない
 - タブのボタンに `data-tab="overview|dark|good"` を付け、対応するパネルの id は `panel-overview` / `panel-dark` / `panel-good` にする
 - 最初に表示するパネル以外には `hidden` を付ける
 - 概要パネルには PDF 由来の定義文（`.definition`）、例（`.examples`）、イラスト（`.figures`）を入れる
-- ダークパターン / 改善例パネルの操作モックは `.mock-browser` で囲み、CSS と JS は `case-NN-mock.css` / `case-NN-mock.js` に分ける。モックのクラス名は `.mock-` で始める
+- ダークパターン / 改善例パネルの操作モックは `.demo-window` で囲み、`case-mocks.css` / `case-mocks.js` の `.demo-*` 共通部品を優先する
+- 共通部品で表現できない場合だけ `case-NN-mock.css` / `case-NN-mock.js` を追加し、専用クラス名を `.mock-` で始める
 - 解説 `.commentary` はタブの外に置き、どのタブでも表示されるようにする
 - 未作成の部分は `.placeholder` で示す
 

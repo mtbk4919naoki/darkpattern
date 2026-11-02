@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑬ お客様の声(2) | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑬ お客様の声(2)</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">商品等を購入した他の消費者の評価や口コミに関する表示であって、誤解を招くものや虚偽の可能性があるもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -54,19 +56,41 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">素材写真の人物が実際の評価者であるように見せ、但書を小さく置いた広告です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-beauty.jp/voice</span></div>
+  <div class="demo-body">
+    <div class="demo-row"><span class="demo-avatar">写真</span><div><h3>「白い肌をキープ」</h3><p>私の必需品です♪</p></div></div>
+    <p class="demo-faint">※個人の感想です　※画像はイメージです</p>
+    <button class="demo-button demo-button--dark" type="button" data-demo-message="写真の人物本人の感想だと思って商品ページへ進みました。" data-demo-tone="dark">商品を詳しく見る</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">イメージ画像と実際の購入者レビューを明確に分けた改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-beauty.jp/voice</span></div>
+  <div class="demo-body">
+    <div class="demo-card"><div class="demo-row"><span class="demo-avatar">素材</span><div><strong>商品イメージ</strong><p class="demo-small">この人物はモデルであり、利用者・評価者ではありません。</p></div></div></div>
+    <h3>購入者レビュー</h3>
+    <div class="demo-review"><span class="demo-badge">購入確認済み</span><p>香りが好みでした。使用感には個人差があります。</p></div>
+    <button class="demo-button demo-button--secondary" type="button" data-demo-message="レビューの掲載基準を表示しました。" data-demo-tone="good">レビュー掲載基準</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>人物写真と感想を一体に見せ、離れた小さい文字で「画像はイメージ」と書くと、その人物の実体験だと受け取られやすくなります。</p><p>改善例では素材写真を「モデル」と明記し、実際の購入者レビューとは別の領域に置きます。効果を保証するような感想だけを強調しません。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -82,7 +106,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>

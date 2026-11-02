@@ -5,12 +5,14 @@
 ## 構成
 
 - `index.html` — 目次・但書
-- `cases/01.html` … `cases/15.html` — 各事例（ダークパターン / 改善例の切替・解説）
+- `cases/01.html` … `cases/15.html` — 各事例（概要 / 操作できるダークパターン / 操作できる改善例 / 解説）
 - 左サイドバー — 全ページ共通のグローバルナビ（目次・事例①〜⑮）
 - 事例ページ — 切替タブをコンテンツ **上部と下部** に配置（同期）
 - `css/style.css` — 共通スタイル（Open Props と `tokens.css` を読み込む）
 - `css/tokens.css` — デザイントークン
+- `css/case-mocks.css` — 事例②〜⑮で共用する操作モック部品
 - `js/case-tabs.js` — タブ切替（上下同期）
+- `js/case-mocks.js` — モックの表示切替・手順移動・結果表示・タイマー
 - `js/sidebar.js` — 狭い画面でのサイドバー開閉
 - `assets/img/` — イラスト（PDF 由来の `illust-*.png`、改善例用 `good-*.png`）
 - `DESIGN.md` — デザインシステム（色・文字・余白とコンポーネントの使い方）
@@ -39,9 +41,7 @@ assets/img/01/
 
 `cases/NN.html` の `#panel-good` 内に `<figure><img src="../assets/img/NN/good-1.png" alt="…"></figure>` を追記してください。
 
-タブへの直リンク（事例①）: `#overview` / `#dark` / `#good`。他の事例は `#dark` / `#good`（2タブのまま）。
-
-事例①は **概要**（PDF 由来の説明・イラスト）、**ダークパターン事例**（操作できるモック）、**改善例**（改善モック）の3タブ構成です。
+全事例が **概要**（PDF 由来の説明・イラスト）、**ダークパターン事例**（操作できるモック）、**改善例**（操作できる改善モック）の3タブ構成です。タブへは `#overview` / `#dark` / `#good` で直接リンクできます。
 
 ## 出典
 

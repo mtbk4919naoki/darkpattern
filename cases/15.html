@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例⑮ カウントダウンタイマー/期間限定 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-mocks.css">
 </head>
 <body>
   <div class="site-shell">
@@ -39,11 +40,12 @@
       <h1>ダークパターン事例⑮ カウントダウンタイマー/期間限定</h1>
 
       <div class="view-tabs" role="tablist" aria-label="表示切替">
-        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
-      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
         <p class="definition">商品・サービスや割引の提供期限のカウントダウンや、間もなく終了する旨の表示であって、消費者を急かすものや虚偽の可能性があるもの</p>
         <h2>【例】</h2>
         <ul class="examples">
@@ -55,19 +57,42 @@
       </div>
       </section>
 
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="demo-intro">終了すると見せたタイマーが0になると再び始まり、価格も変わらない例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-sale.jp/limited</span></div>
+  <div class="demo-body">
+    <span class="demo-badge demo-badge--dark">期間限定セール</span>
+    <h3>特別価格の終了まで</h3>
+    <p class="demo-countdown" data-demo-countdown="10" data-demo-reset>00:10</p>
+    <p class="demo-price">本日だけ 1,980円</p>
+    <button class="demo-button demo-button--dark" type="button" data-demo-message="急かされて購入しました。タイマーは終了後また10秒に戻ります。" data-demo-tone="dark">終了前に購入する</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
+      </section>
+
       <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
-        <h2 class="visually-hidden">改善例</h2>
-        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
-        <div class="figures"></div>
+        <p class="demo-intro">実際の期限を日時で示し、期限がない場合は急かす表示をしない改善例です。</p>
+<div class="demo-window">
+  <div class="demo-chrome"><span class="demo-url">example-sale.jp/campaign</span></div>
+  <div class="demo-body">
+    <h3>キャンペーン価格 1,980円</h3>
+    <div class="demo-banner demo-banner--good"><strong>受付期限: 2026年11月30日 23:59</strong><p class="demo-small">期限後は通常価格2,480円になります。在庫状況とは連動していません。</p></div>
+    <button class="demo-button demo-button--secondary" type="button" data-demo-message="条件を確認しました。残り時間を誇張する表示はありません。" data-demo-tone="good">キャンペーン条件を確認</button>
+  </div>
+  <p class="demo-feedback" aria-live="polite"></p>
+</div>
       </section>
 
       <section class="commentary" aria-label="解説">
         <h2>解説</h2>
-        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+        <p>根拠のないカウントダウンや、終了後に再開するタイマーは、実際には存在しない締切で判断を急がせます。「期間限定」だけで終了日時を示さない表示も同様です。</p><p>改善例では実際の終了日時と、終了後に何が変わるかを明示します。期限がない場合や価格が変わらない場合は、カウントダウンを表示しません。</p>
       </section>
 
             <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
-        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
         <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
 
@@ -83,7 +108,8 @@
   </footer>
     </div>
   </div>
-  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/case-tabs.js?v=2" defer></script>
   <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-mocks.js" defer></script>
 </body>
 </html>
