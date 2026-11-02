@@ -213,6 +213,14 @@
   border-color: var(--color-dark);
 }
 
+.demo-button:disabled,
+.demo-button:disabled:hover {
+  color: var(--color-text-muted);
+  background: var(--color-surface-muted);
+  border-color: var(--color-border);
+  cursor: not-allowed;
+}
+
 .demo-banner {
   margin-bottom: var(--space-3);
   padding: var(--space-3);
@@ -441,6 +449,10 @@
   gap: var(--space-2);
 }
 
+.demo-plans--stack {
+  grid-template-columns: 1fr;
+}
+
 .demo-plan {
   padding: var(--space-3);
   border: 1px solid var(--color-border);
@@ -463,6 +475,7 @@
 
 .demo-badge {
   display: inline-block;
+  margin-right: var(--space-2);
   padding: 0.1rem var(--space-2);
   color: var(--color-primary-strong);
   background: var(--color-primary-soft);

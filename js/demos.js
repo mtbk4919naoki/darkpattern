@@ -4,6 +4,7 @@ const triggerSelector = [
   "[data-demo-step]",
   "[data-demo-toggle]",
   "[data-demo-dismiss]",
+  "[data-demo-pay]",
   "[data-mock-action]",
 ].join(",");
 
@@ -22,9 +23,10 @@ const showFeedback = (trigger) => {
   feedback.className = `demo-feedback demo-feedback--${trigger.dataset.demoTone ?? "neutral"}`;
 };
 
-const reveal = (id) => {
+const reveal = (trigger, id) => {
   const target = document.getElementById(id);
   if (target) target.hidden = false;
+  if (trigger.hasAttribute("data-demo-hide-self")) trigger.hidden = true;
 };
 
 const toggle = (id) => {
@@ -46,6 +48,19 @@ const selectPlan = (trigger) => {
     const label = button.dataset.demoSelectLabel || "選択";
     button.textContent = selected ? "選択中" : label;
   }
+
+  const payButton = trigger.closest(".demo-window")?.querySelector("[data-demo-pay]");
+  if (payButton) payButton.disabled = false;
+};
+
+const pay = (trigger) => {
+  if (!trigger.hasAttribute("data-demo-pay")) return;
+  const root = trigger.closest(".demo-window");
+  const feedback = root?.querySelector(".demo-feedback");
+  if (!feedback) return;
+  const name = root.querySelector(".demo-plan.is-selected")?.dataset.planName;
+  feedback.textContent = name ? `${name}の支払いに進みました。` : "支払いへ進みました。";
+  feedback.className = `demo-feedback demo-feedback--${trigger.dataset.demoTone ?? "neutral"}`;
 };
 
 const dismiss = (trigger) => {
@@ -90,8 +105,9 @@ export function initDemos() {
 
     showFeedback(trigger);
     selectPlan(trigger);
+    pay(trigger);
     dismiss(trigger);
-    if (trigger.dataset.demoReveal) reveal(trigger.dataset.demoReveal);
+    if (trigger.dataset.demoReveal) reveal(trigger, trigger.dataset.demoReveal);
     if (trigger.dataset.demoToggle) toggle(trigger.dataset.demoToggle);
     if (trigger.dataset.demoStep) showStep(trigger, trigger.dataset.demoStep);
   });
