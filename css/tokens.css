@@ -1,0 +1,55 @@
+/* 値の正本は DESIGN.md。色の直書きはこのファイルだけに置く */
+:root {
+  --font-body: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", var(--font-sans);
+
+  --color-bg: var(--gray-1);
+  --color-surface: #ffffff;
+  --color-surface-muted: var(--gray-0);
+  --color-border: var(--gray-3);
+  --color-border-strong: var(--gray-4);
+  --color-text: var(--gray-9);
+  --color-text-muted: var(--gray-7);
+  --color-primary: var(--indigo-8);
+  --color-primary-strong: var(--indigo-9);
+  --color-primary-soft: var(--indigo-0);
+  --color-on-primary: #ffffff;
+  --color-dark: var(--red-9);
+  --color-good: #237a36;
+  --color-good-soft: var(--green-0);
+
+  --space-1: var(--size-1);
+  --space-2: var(--size-2);
+  --space-3: var(--size-3);
+  --space-4: var(--size-5);
+  --space-5: var(--size-7);
+  --space-6: var(--size-8);
+
+  --radius-sm: var(--radius-2);
+  --radius-md: 0.625rem;
+  --radius-lg: var(--radius-3);
+  --radius-full: var(--radius-round);
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+
+  --leading-tight: var(--font-lineheight-1);
+  --leading-body: var(--font-lineheight-4);
+
+  --ease: var(--ease-3);
+  --duration: 160ms;
+
+  --sidebar-width: 16rem;
+  --content-width: 46rem;
+
+  /* モック内の「架空サイト」用 */
+  --mock-accent: #c2410c;
+  --mock-accent-strong: #9a3412;
+  --mock-ink: var(--gray-9);
+  --mock-subtle: var(--gray-6);
+  --mock-chrome: var(--gray-2);
+  --mock-dot: var(--gray-4);
+}

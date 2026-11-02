@@ -5,34 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>事例① 強制登録 | ダークパターン事例イラスト集</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-01-mock.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a href="../index.html">ダークパターン事例イラスト集</a>
-    </div>
-  </header>
-  <div class="wrap">
-    <main>
+  <div class="site-shell">
+    <aside class="site-sidebar" aria-label="グローバルナビ">
+      <p class="site-sidebar-title"><a href="../index.html">ダークパターン事例</a></p>
+      <button type="button" class="sidebar-toggle" aria-expanded="false" aria-controls="site-sidebar-nav">メニュー</button>
+      <nav id="site-sidebar-nav" class="site-sidebar-nav">
+        <ul class="site-sidebar-list">
+          <li><a href="../index.html">目次</a></li>
+          <li><a href="../cases/01.html" aria-current="page">事例① 強制登録</a></li>
+          <li><a href="../cases/02.html">事例② 強制的情報開示</a></li>
+          <li><a href="../cases/03.html">事例③ 隠された情報</a></li>
+          <li><a href="../cases/04.html">事例④ 事前選択</a></li>
+          <li><a href="../cases/05.html">事例⑤ 不当参照価格</a></li>
+          <li><a href="../cases/06.html">事例⑥ ひっかけ質問</a></li>
+          <li><a href="../cases/07.html">事例⑦ 感情のゆさぶり</a></li>
+          <li><a href="../cases/08.html">事例⑧ 執拗な繰り返し</a></li>
+          <li><a href="../cases/09.html">事例⑨ キャンセル困難</a></li>
+          <li><a href="../cases/10.html">事例⑩ 価格比較妨害</a></li>
+          <li><a href="../cases/11.html">事例⑪ 隠れたコスト</a></li>
+          <li><a href="../cases/12.html">事例⑫ お客様の声(1)</a></li>
+          <li><a href="../cases/13.html">事例⑬ お客様の声(2)</a></li>
+          <li><a href="../cases/14.html">事例⑭ No.1表示/高満足度</a></li>
+          <li><a href="../cases/15.html">事例⑮ カウントダウンタイマー/期間限定</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="site-body">
+      <div class="content-wrap">
+        <main>
       <h1>ダークパターン事例① 強制登録</h1>
-      <p class="definition">会員登録（アカウントの作成を含む）を強制されるか、登録が必要だと思い込まされてしまうもの</p>
-      <h2>【例】</h2>
-      <ul class="examples">
+
+      <div class="view-tabs" role="tablist" aria-label="表示切替">
+        <button data-tab="overview" type="button" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
+        <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
+      </div>
+
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+        <p class="definition">会員登録（アカウントの作成を含む）を強制されるか、登録が必要だと思い込まされてしまうもの</p>
+        <h2>【例】</h2>
+        <ul class="examples">
           <li><span class="label">Ⓐ</span>商品を購入するためには必ずしも会員登録をする必要はないが、スクロールをしなければ会員登録せずに購入するためのボタンが表示されないため、分かりにくい。</li>
           <li><span class="label">Ⓑ</span>「ご注文手続き」のボタンが、画面上側の「登録はこちらから」や「ログイン」ボタンよりも視覚的に目立ちにくく、会員登録が必須ではないことが認識しづらい。</li>
-      </ul>
-      <div class="figures">
-        <figure><img src="../assets/img/01/illust-1.png" alt="ダークパターン事例① 強制登録 イラスト1" loading="lazy"></figure>
+        </ul>
+        <div class="figures">
+          <figure><img src="../assets/img/01/illust-1.png" alt="ダークパターン事例① 強制登録 イラスト1" loading="lazy"></figure>
+        </div>
+      </section>
+
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark" hidden>
+        <p class="mock-intro">架空のネットショップ「ご購入手続き」画面の再現です。会員登録は不要ですが、ゲスト購入への導線が下に隠れ、登録・ログインが目立つように配置されています。スクロールして操作してみてください。</p>
+        <div class="mock-browser" id="mock-dark">
+          <div class="mock-chrome">
+            <span></span><span></span><span></span>
+            <div class="mock-url">example-shop.jp/checkout</div>
+          </div>
+          <div class="mock-viewport mock-viewport--dark">
+            <div class="mock-shop">
+              <h3>ご購入手続き</h3>
+              <div class="mock-cta-row">
+                <button type="button" class="mock-btn mock-btn--primary" data-mock-action="会員登録画面へ進みました（デモ）。多くの利用者はこちらを選びがちです。">会員登録はこちら</button>
+                <button type="button" class="mock-btn mock-btn--secondary" data-mock-action="ログイン画面へ進みました（デモ）。">ログイン</button>
+              </div>
+              <div class="mock-filler">
+                <p><strong>カートの商品</strong> — サンプル商品（税込 3,300円）</p>
+                <p>会員になるとポイントが貯まり、次回以降のお買い物が便利になります。限定クーポンや新商品情報もお届けします。</p>
+                <p>お客様の声：「会員登録してよかった！」「リピート購入が楽になりました」</p>
+                <p>配送について、返品について、よくある質問…（説明文が続きます）</p>
+              </div>
+              <p class="mock-scroll-hint">▼ 下にスクロール</p>
+              <div class="mock-guest-buried">
+                <button type="button" class="mock-btn" data-mock-action="ゲスト購入に進めます。会員登録は不要でした（デモ）。" data-mock-ok>会員登録せずに購入する</button>
+              </div>
+            </div>
+          </div>
+          <p class="mock-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
+        <p class="mock-intro">同じ購入場面の改善例です。会員登録が任意であることを最初から示し、ゲスト購入と会員登録を同程度に選べるようにしています。</p>
+        <div class="mock-browser" id="mock-good">
+          <div class="mock-chrome">
+            <span></span><span></span><span></span>
+            <div class="mock-url">example-shop.jp/checkout</div>
+          </div>
+          <div class="mock-viewport">
+            <div class="mock-shop">
+              <h3>ご購入手続き</h3>
+              <p class="mock-banner-good">会員登録なしでも購入できます。</p>
+              <div class="mock-equal-cta">
+                <button type="button" class="mock-btn mock-btn--guest-good" data-mock-action="ゲスト購入の入力画面へ進みました（デモ）。" data-mock-ok>会員登録せずに購入</button>
+                <button type="button" class="mock-btn mock-btn--secondary" data-mock-action="会員登録画面へ進みました（デモ）。任意です。">会員登録して購入</button>
+              </div>
+              <button type="button" class="mock-btn mock-btn--ghost" data-mock-action="ログイン画面へ進みました（デモ）。">すでに会員の方はログイン</button>
+              <div class="mock-filler">
+                <p><strong>カートの商品</strong> — サンプル商品（税込 3,300円）</p>
+              </div>
+            </div>
+          </div>
+          <p class="mock-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="commentary" aria-label="解説">
+        <h2>解説</h2>
+        <p>会員登録は事業者にとってリピートやデータ取得に有利ですが、購入の条件ではありません。ダークパターンでは、登録・ログインを大きく見せ、ゲスト購入をスクロールの先や小さなリンクに追いやすく、登録必須と誤解させます。</p>
+        <p>改善では、<strong>任意であること</strong>を明示し、ゲスト購入を最初の画面で登録と同等の選択肢として並べます。押した結果が分かるフィードバック（デモでは下のメッセージ）があると、利用者が自分の意思で選べているか確認しやすくなります。</p>
+      </section>
+
+            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
+        <button data-tab="overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true">概要</button>
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="false">ダークパターン事例</button>
+        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
       </div>
+
       <nav class="case-nav" aria-label="ページ移動">
-      <span class="spacer"></span>
-      <a href="../index.html">目次</a>
-      <a href="02.html">事例② →</a>
+        <span class="spacer"></span>
+        <a href="../index.html">目次</a>
+        <a href="02.html">事例② →</a>
       </nav>
     </main>
-  </div>
+      </div>
   <footer class="site-footer">
-    <p>出典: 消費者庁関連 RDP「いわゆる『ダークパターン』に関する取引の実態調査」に基づくイラスト集（執筆者個人作成）。消費者庁の見解を示すものではありません。</p>
+    <p>個人で作成した学習用サンプル。<a href="https://www.caa.go.jp/policies/future/icprc/research_010">消費者庁の調査ページ</a>を参照。公式見解・特定事業者を示すものではありません。</p>
   </footer>
+    </div>
+  </div>
+  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/sidebar.js" defer></script>
+  <script src="../js/case-01-mock.js" defer></script>
 </body>
 </html>

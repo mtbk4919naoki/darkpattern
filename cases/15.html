@@ -7,32 +7,83 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a href="../index.html">ダークパターン事例イラスト集</a>
-    </div>
-  </header>
-  <div class="wrap">
-    <main>
+  <div class="site-shell">
+    <aside class="site-sidebar" aria-label="グローバルナビ">
+      <p class="site-sidebar-title"><a href="../index.html">ダークパターン事例</a></p>
+      <button type="button" class="sidebar-toggle" aria-expanded="false" aria-controls="site-sidebar-nav">メニュー</button>
+      <nav id="site-sidebar-nav" class="site-sidebar-nav">
+        <ul class="site-sidebar-list">
+          <li><a href="../index.html">目次</a></li>
+          <li><a href="../cases/01.html">事例① 強制登録</a></li>
+          <li><a href="../cases/02.html">事例② 強制的情報開示</a></li>
+          <li><a href="../cases/03.html">事例③ 隠された情報</a></li>
+          <li><a href="../cases/04.html">事例④ 事前選択</a></li>
+          <li><a href="../cases/05.html">事例⑤ 不当参照価格</a></li>
+          <li><a href="../cases/06.html">事例⑥ ひっかけ質問</a></li>
+          <li><a href="../cases/07.html">事例⑦ 感情のゆさぶり</a></li>
+          <li><a href="../cases/08.html">事例⑧ 執拗な繰り返し</a></li>
+          <li><a href="../cases/09.html">事例⑨ キャンセル困難</a></li>
+          <li><a href="../cases/10.html">事例⑩ 価格比較妨害</a></li>
+          <li><a href="../cases/11.html">事例⑪ 隠れたコスト</a></li>
+          <li><a href="../cases/12.html">事例⑫ お客様の声(1)</a></li>
+          <li><a href="../cases/13.html">事例⑬ お客様の声(2)</a></li>
+          <li><a href="../cases/14.html">事例⑭ No.1表示/高満足度</a></li>
+          <li><a href="../cases/15.html" aria-current="page">事例⑮ カウントダウンタイマー/期間限定</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="site-body">
+      <div class="content-wrap">
+        <main>
       <h1>ダークパターン事例⑮ カウントダウンタイマー/期間限定</h1>
-      <p class="definition">商品・サービスや割引の提供期限のカウントダウンや、間もなく終了する旨の表示であって、消費者を急かすものや虚偽の可能性があるもの</p>
-      <h2>【例】</h2>
-      <ul class="examples">
+
+      <div class="view-tabs" role="tablist" aria-label="表示切替">
+        <button data-tab="dark" type="button" role="tab" id="tab-dark" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="good" type="button" role="tab" id="tab-good" aria-controls="panel-good" aria-selected="false">改善例</button>
+      </div>
+
+      <section id="panel-dark" role="tabpanel" aria-labelledby="tab-dark">
+        <p class="definition">商品・サービスや割引の提供期限のカウントダウンや、間もなく終了する旨の表示であって、消費者を急かすものや虚偽の可能性があるもの</p>
+        <h2>【例】</h2>
+        <ul class="examples">
           <li><span class="label">Ⓐ</span>受付終了までの残り時間や商品の在庫、セール価格を確保しておく残り時間をカウントダウン方式で表示している。</li>
           <li><span class="label">Ⓑ</span>期間を具体的に示さず、期間限定である旨の表示をしている。カウントダウン終了後や期間経過後でも価格が変わらない等、契約する上で特段の変化が見られない場合もある。</li>
       </ul>
-      <div class="figures">
+        <div class="figures">
         <figure><img src="../assets/img/15/illust-1.png" alt="ダークパターン事例⑮ カウントダウンタイマー/期間限定 イラスト1" loading="lazy"></figure>
       </div>
+      </section>
+
+      <section id="panel-good" role="tabpanel" aria-labelledby="tab-good" hidden>
+        <h2 class="visually-hidden">改善例</h2>
+        <p class="placeholder">改善例のモックアップと説明をここに追加します。</p>
+        <div class="figures"></div>
+      </section>
+
+      <section class="commentary" aria-label="解説">
+        <h2>解説</h2>
+        <p class="placeholder">なぜ問題か／改善の考え方をここに書きます。</p>
+      </section>
+
+            <div class="view-tabs view-tabs--bottom" role="tablist" aria-label="表示切替（下部）">
+        <button data-tab="dark" type="button" role="tab" aria-controls="panel-dark" aria-selected="true">ダークパターン事例</button>
+        <button data-tab="good" type="button" role="tab" aria-controls="panel-good" aria-selected="false">改善例</button>
+      </div>
+
       <nav class="case-nav" aria-label="ページ移動">
       <a href="14.html">← 事例⑭</a>
       <a href="../index.html">目次</a>
       <span class="spacer"></span>
       </nav>
     </main>
-  </div>
+      </div>
   <footer class="site-footer">
-    <p>出典: 消費者庁関連 RDP「いわゆる『ダークパターン』に関する取引の実態調査」に基づくイラスト集（執筆者個人作成）。消費者庁の見解を示すものではありません。</p>
+    <p>個人で作成した学習用サンプル。<a href="https://www.caa.go.jp/policies/future/icprc/research_010">消費者庁の調査ページ</a>を参照。公式見解・特定事業者を示すものではありません。</p>
   </footer>
+    </div>
+  </div>
+  <script src="../js/case-tabs.js" defer></script>
+  <script src="../js/sidebar.js" defer></script>
 </body>
 </html>
